@@ -1,0 +1,12 @@
+.container-fluid .row {
+    background-color: #fcd8e2;
+    padding: 8px;
+}
+.container-fluid .row img .top-logo {
+    height: 100px;
+    width: 200px;
+}
+.navbar {
+    background-color: #5bddb1;
+}
+

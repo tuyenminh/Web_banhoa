@@ -1,0 +1,35 @@
+nav .container-fluid .row {
+    background-color: #fcd8e2;
+    padding: 8px;
+    height: 200px;
+    text-align: center;
+}
+body .container-fluid {
+    background-color: #5bddb1;
+    text-align: center;
+}
+nav .container-fluid .row img{
+    height: 150px;
+    margin-top: 10px;
+}
+.col-2 {
+    text-align-last: center;
+}
+
+.d-grid {
+    margin-right: 30px;
+}
+.container .row img {
+    width: 200px;
+    height: 200px;
+    align-items: flex-end;
+}
+.img_footer {
+    width: 200px;
+    height: 200px;
+    align-items: flex-end;
+}
+.justify-content-end {
+    justify-content: flex-end!important;
+    text-align: center;
+}
