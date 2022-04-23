@@ -75,7 +75,7 @@ $rows = mysqli_num_rows($query);
                 <p>Giá Bán: <span><?php echo $row['sp_gia']; ?></span></p>
             </div>
             <?php
-            $i++;
+            $i ++;
             if ($i == 3) {
                 $i = 0;
             ?>

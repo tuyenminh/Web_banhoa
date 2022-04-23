@@ -1,4 +1,4 @@
-<a class="mt-4 mr-2" href="index.php?page_layout=cart">giỏ hàng</a><span class="mt-3">
+<a class="mt-4 mr-2" href="index.php?page_layout=cart">Giỏ hàng</a><span class="mt-3">
     <?php
     if(isset($_SESSION['cart'])){
         $totals=0;

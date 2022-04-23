@@ -14,14 +14,26 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 if (isset($_SESSION['cart'])) {
     if (isset($_POST['sbm'])) {
-        foreach ($_POST['qtt'] as $prd_id => $qtt) {
-            $_SESSION['cart'][$prd_id] = $qtt;
+        foreach ($_POST["qtt"] as $prd_id => $qtt) {
+            $_SESSION["cart"][$prd_id] = $qtt;
         }
         // echo '<pre>';
         // print_r($_POST['qtt']);    
         // echo '<pre>';
         // $qtt=$_POST['qtt'];
     }
+    // if(isset($_SESSION['cart'])){
+    //     if(isset($_POST['sbm'])){
+    //         foreach ($_POST['qtt'] as $prd_id => $qtt) {
+    //         //Nếu số lượng nhập vào là 0 thì unset sản phẩm đó
+    //             if($qtt==0){
+    //                 unset($_SESSION['cart'][$prd_id]);
+    //             }else{
+    //         //Nếu số khác 0 thì gán ngược lại.
+    //                 $_SESSION['cart'][$prd_id] = $qtt;
+    //             }
+    //         }
+    //     }
     $arr_id = array();
     foreach ($_SESSION['cart'] as $prd_id => $qtt) {
         $arr_id[] = $prd_id;

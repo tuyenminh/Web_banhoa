@@ -51,7 +51,7 @@ if (isset($_GET['id_category'])) {
     $list_page .= '<li class="page-item"><a class="page-link" href="index.php?page_layout=category&id_category=' . $row['dm_id'] . '&dm_ten=' . $cat_name . '&page=' . $page_next . '">Trang sau</a></li>';
     $sql_prd = "SELECT*FROM sanphams WHERE dm_id='$cat_id' ORDER BY sp_id ASC LIMIT $per_row, $row_per_page";
     $query_prd = mysqli_query($conn, $sql_prd);
-    // $row_prd = mysqli_num_rows(mysqli_query($conn, "SELECT*FROM product WHERE cat_id='$cat_id'"))
+    $row_prd = mysqli_num_rows(mysqli_query($conn, "SELECT*FROM sanphams WHERE dm_id='$cat_id'"))
 ?>
     <!--	List Product	-->
     <div class="products">

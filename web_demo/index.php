@@ -45,7 +45,7 @@ include_once('admin/modules/connect/connect.php');
     <link rel="stylesheet" href="../use.fontawesome.com/releases/v5.0.6/css/solid.css" >
     <link rel="stylesheet" href="../use.fontawesome.com/releases/v5.0.6/css/fontawesome.css" >
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/home.css">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.js"></script>
     <!-- product -->

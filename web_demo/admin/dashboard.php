@@ -2,14 +2,7 @@
 if (!defined('hang')) {
 	die('ban truy cap sai cach');
 }
-// $sql="SELECT * FROM sanphams";
-$query = "SELECT `DANHMUCS`.*, COUNT(SANPHAMS.DM_ID) AS NUMBER_DANHMUCS FROM sanphams
-INNER JOIN DANHMUCS ON SANPHAMS.DM_ID = DANHMUCS.DM_ID GROUP BY SANPHAMS.DM_ID";
-$result = mysqli_query($connect, $query);
-$data = [];
-while ($row = mysqli_fetch_array($result)){
-	$data[]= row;
-} 
+$sql="SELECT * FROM ";
 ?>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 	<div class="row">
@@ -21,46 +14,79 @@ while ($row = mysqli_fetch_array($result)){
 		</ol>
 	</div>
 	<!--/.row-->
-<!DOCTYPE html>
-		<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Trang chủ quản trị</h1>
+		</div>
+	</div>
+	<!--/.row-->
 
-        var data = google.visualization.arrayToDataTable([
-          ['dm_ten', 'dm_id'],
-          <?php
-		  foreach ($data as $key) {
-			echo "['".$key['dm_ten']."' . " .$key['dm_id']. "]. ";
-		  }
-		  ?>
-        ]);
-
-        var options = {
-          title: 'My Daily Activities'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
-  </body>
-</html>
-
+	<div class="row">
+		<div class="col-xs-12 col-md-6 col-lg-3">
+			<div class="panel panel-blue panel-widget ">
+				<div class="row no-padding">
+					<div class="col-sm-3 col-lg-5 widget-left">
+						<svg class="glyph stroked bag">
+							<use xlink:href="#stroked-bag"></use>
+						</svg>
+					</div>
+					<div class="col-sm-9 col-lg-7 widget-right">
+						<div class="large"><?php echo mysqli_num_rows(mysqli_query($conn, $sql."sanphams"))?></div>
+						<div class="text-muted">Sản Phẩm</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6 col-lg-3">
+			<div class="panel panel-orange panel-widget">
+				<div class="row no-padding">
+					<div class="col-sm-3 col-lg-5 widget-left">
+						<svg class="glyph stroked empty-message">
+							<use xlink:href="#stroked-empty-message"></use>
+						</svg>
+					</div>
+					<div class="col-sm-9 col-lg-7 widget-right">
+						<div class="large"><?php echo mysqli_num_rows(mysqli_query($conn, $sql."comment"))?></div>
+						<div class="text-muted">Bình Luận</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6 col-lg-3">
+			<div class="panel panel-teal panel-widget">
+				<div class="row no-padding">
+					<div class="col-sm-3 col-lg-5 widget-left">
+						<svg class="glyph stroked male-user">
+							<use xlink:href="#stroked-male-user"></use>
+						</svg>
+					</div>
+					<div class="col-sm-9 col-lg-7 widget-right">
+						<div class="large"><?php echo mysqli_num_rows(mysqli_query($conn, $sql."user"))?></div>
+						<div class="text-muted">Thành Viên</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6 col-lg-3">
+			<div class="panel panel-red panel-widget">
+				<div class="row no-padding">
+					<div class="col-sm-3 col-lg-5 widget-left">
+						<svg class="glyph stroked app-window-with-content">
+							<use xlink:href="#stroked-app-window-with-content"></use>
+						</svg>
+					</div>
+					<div class="col-sm-9 col-lg-7 widget-right">
+						<div class="large">25.2k</div>
+						<div class="text-muted">Quảng Cáo</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!--/.row-->
 </div>
 <!--/.main-->
+
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>

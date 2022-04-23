@@ -91,7 +91,7 @@ if (!defined('hang')) {
 									<td style=""><?php echo $row['dm_ten'];?></td>
 									<td class="form-group">
 										<a href="index.php?page_layout=edit_category&id=<?php echo $row['dm_id'];?>" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
-										<a href="del_category.php?dm_id=<?php echo $row['dm_id'];?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+										<a href="del_category.php?id=<?php echo $row['dm_id'];?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
 									</td>
 								</tr>
 							<?php } ?>
